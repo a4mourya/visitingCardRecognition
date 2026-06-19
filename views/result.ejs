@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Extraction Result</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .container { max-width: 900px; margin: auto; display: flex; gap: 30px; }
+    .card-image img { max-width: 350px; border: 1px solid #ddd; padding: 8px; }
+    .details { flex: 1; }
+    .details h2 { margin-bottom: 20px; }
+    .details p { margin: 8px 0; }
+    .label { font-weight: bold; }
+    a { text-decoration: none; color: blue; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card-image">
+      <img src="<%= imagePath %>" alt="Uploaded Card" />
+    </div>
+
+    <div class="details">
+      <h2>Extracted Data</h2>
+
+      <p><span class="label">Company Name:</span> <%= card.companyName %></p>
+      <p><span class="label">Person Name:</span> <%= card.personName %></p>
+      <p><span class="label">Address:</span> <%= card.address %></p>
+      <p><span class="label">Telephone No:</span> <%= card.telephoneNo %></p>
+      <p><span class="label">Phone No:</span> <%= card.phoneNo %></p>
+      <p><span class="label">Email ID:</span> <%= card.emailId %></p>
+      <p>
+        <span class="label">Company Domain Name:</span>
+        <%= Array.isArray(card.companyDomainName) ? card.companyDomainName.join(", ") : card.companyDomainName %>
+      </p>
+
+      <br />
+      <a href="/">Upload Another Card</a>
+    </div>
+  </div>
+</body>
+</html>
